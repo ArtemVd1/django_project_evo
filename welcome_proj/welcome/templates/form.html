@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta_title %}Привітання с гостем{% endblock meta_title %}
+
+{% block status_message %}
+	{% if request.GET.status_message %}
+		<div class="alert alert-warning text-center" role="alert">
+            {{ request.GET.status_message }}
+		</div>
+	{% endif %}
+    {{ block.super }}
+{% endblock  %}
+
+{% block content %}
+
+    <form action="{% url 'welcome_form' %}" method="post" enctype="multipart/form-data" role="form" class="border">
+	    {% csrf_token %}
+        <div class="text-center text-margin">
+            <h4>Ласкаво просимо!</h4>
+        </div>
+        <div>
+            <h6>Будь ласка, введіть ваше ім'я та прізвище</h6>
+        </div>
+
+        <div class="form-group row {% if errors.first_name %}has-error{% endif%}">
+            <div class="col-sm-12">
+                <input type="text"
+                       value="{{ request.POST.first_name }}"
+                       name="first_name"
+                       id="first_name"
+                       placeholder="Ім'я"
+                       class="form-control {% if errors.first_name %}is-invalid{% endif %}"/>
+                <div class="invalid-feedback">{{ errors.first_name }}</div>
+            </div>
+        </div>
+        <div class="form-group row {% if errors.last_name %}has-error{% endif%}">
+            <div class="col-sm-12">
+                <input type="text"
+                       value="{{ request.POST.last_name }}"
+                       name="last_name"
+                       id="last_name"
+                       placeholder="Прізвище"
+                       class="form-control {% if errors.last_name %}is-invalid{% endif %}"/>
+                <div class="invalid-feedback">{{ errors.last_name }}</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12">
+                <input type="submit" value="Привітатись" name="hello_button" class="btn btn-primary"/>
+                <button type="submit" name="quests_button" class="btn btn-link">Наші гості</button>
+            </div>
+        </div>
+    </form>
+
+{% endblock content %}

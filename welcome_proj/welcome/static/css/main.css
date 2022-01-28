@@ -1,0 +1,71 @@
+h1, h2, h3, h5, h6 {
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.alert {
+    margin: 0 0 0.5rem 0;
+    font-weight: 450;
+    color: black;
+    border-radius: 10px;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-header {
+    margin-bottom: 0 !important;
+}
+
+.card-footer {
+    padding: 0 !important;
+}
+
+input {
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    margin: 2rem 0 1rem 0 !important;
+    font-weight: 500 !important;
+}
+
+.btn-link {
+    margin: 2rem 0 1rem 0 !important;
+}
+
+.invalid-feedback {
+    margin-top: 0;
+}
+
+.border {
+    border: 1px solid#dee2e6;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.border-table {
+    border: 1px solid#dee2e6;
+    border-radius: 10px !important;
+    padding: 2rem 3rem 2rem 3rem !important;
+}
+
+.main-margin {
+    margin-top: 3rem;
+}
+
+.text-margin {
+    margin-bottom: 1.5rem;
+    font-weight: 600 !important;
+}
+
+.form-control {
+    font-size: .875em !important;
+    color: #000000;
+}
+
+.page-link {
+    margin-top: 0.5rem;
+}
